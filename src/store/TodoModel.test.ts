@@ -10,7 +10,7 @@ describe("describe", () => {
   test("can create a instance of the TodoModel", () => {
     const item = TodoModel.create(Object.assign({}, data));
 
-    expect(item).toEqual(Object.assign({}, data));
+    expect(item.toJSON()).toEqual(Object.assign(data));
   });
 
   test("can change property complete", () => {

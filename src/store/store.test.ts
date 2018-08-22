@@ -9,6 +9,6 @@ describe("", () => {
   test("can create a instance of the Store", () => {
     const store = TodoStore.create(Object.assign(dataStore));
 
-    expect(store).toEqual(dataStore);
+    expect(store.toJSON()).toEqual(dataStore);
   });
 });
