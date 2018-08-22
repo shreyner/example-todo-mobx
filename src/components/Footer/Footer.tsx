@@ -4,11 +4,10 @@ import TodoCount from "../TodoCounter/TodoCounter";
 import Filters from "../Filters/Filters";
 
 export interface FooterProps {
-  count: number;
   clearCompleted: () => void;
 }
 
-export function Footer({ count, clearCompleted }: FooterProps) {
+export function Footer({ clearCompleted }: FooterProps) {
   return (
     <footer>
       <TodoCount />
