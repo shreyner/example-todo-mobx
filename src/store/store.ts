@@ -36,7 +36,7 @@ export const TodoStore = types
   }))
   .actions(self => ({
     addTodo(text: string, completed?: boolean) {
-      self.todos.push(cast({ id: lastIdTodo++, text, completed})
+      self.todos.push(cast({ id: lastIdTodo++, text, completed}))
     },
     setFilter(filter: TodoFilters) {
       self.filter = filter
