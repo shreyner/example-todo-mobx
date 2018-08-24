@@ -1,12 +1,12 @@
-import * as React from "react";
-import { inject, observer } from "mobx-react";
-import { TodoFilters } from "../../store/store";
-import FilterLink from "./FilterLink/FilterLink";
+import * as React from 'react';
+import { inject, observer } from 'mobx-react';
+import { TodoFilters } from '../../store/store';
+import FilterLink from './FilterLink/FilterLink';
 
 const FilterTitles = {
-  [TodoFilters.ALL]: "All",
-  [TodoFilters.ACTIVE]: "Actice",
-  [TodoFilters.COMPLETED]: "Completed"
+  [TodoFilters.ALL]: 'All',
+  [TodoFilters.ACTIVE]: 'Actice',
+  [TodoFilters.COMPLETED]: 'Completed'
 };
 
 export interface FiltersProps {

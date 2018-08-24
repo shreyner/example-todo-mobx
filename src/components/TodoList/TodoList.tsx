@@ -1,7 +1,7 @@
-import * as React from "react";
-import { inject, observer } from "mobx-react";
-import { Todo } from "../../interfaces";
-import TodoItem from "./TodoItem/TodoItem";
+import * as React from 'react';
+import { inject, observer } from 'mobx-react';
+import { Todo } from '../../interfaces';
+import TodoItem from './TodoItem/TodoItem';
 
 export interface TodoListProps {
   todos: ReadonlyArray<Todo>;

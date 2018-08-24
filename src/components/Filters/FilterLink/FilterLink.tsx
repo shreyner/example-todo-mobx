@@ -1,12 +1,12 @@
-import * as React from "react";
-import { inject, observer } from "mobx-react";
-import { TodoFilters } from "../../../store";
+import * as React from 'react';
+import { inject, observer } from 'mobx-react';
+import { TodoFilters } from '../../../store/store';
 
 export interface FilterLinkProps {
   filter: TodoFilters;
   active: boolean;
   setFilter: (filter: TodoFilters) => void;
-  children: any;
+  children?: React.ReactNode;
 }
 
 export function FilterLink({
@@ -18,10 +18,10 @@ export function FilterLink({
   return (
     <li
       style={{
-        cursor: "pointer",
-        display: "inline",
-        padding: "0 5px",
-        textDecoration: active ? "underline" : ""
+        cursor: 'pointer',
+        display: 'inline',
+        padding: '0 5px',
+        textDecoration: active ? 'underline' : ''
       }}
       onClick={() => setFilter(filter)}
     >

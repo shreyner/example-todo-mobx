@@ -1,5 +1,5 @@
-import * as React from "react";
-import { inject, observer } from "mobx-react";
+import * as React from 'react';
+import { inject, observer } from 'mobx-react';
 
 export interface CreateTodoProps {
   onSave: (text: string) => void;
@@ -14,7 +14,7 @@ export class CreateTodo extends React.Component<
   CreateTodoState
 > {
   state = {
-    text: ""
+    text: ''
   };
 
   render() {
@@ -35,21 +35,21 @@ export class CreateTodo extends React.Component<
   handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const text = event.target.value;
     this.setState({ text });
-  };
+  }
 
-  handleKeyDown = (event: any) => {
+  handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.which === 13) {
       this.addNewTodo();
     }
-  };
+  }
 
   addNewTodo = () => {
     const { text } = this.state;
     if (text.trim().length) {
       this.props.onSave(text);
-      this.setState({ text: "" });
+      this.setState({ text: '' });
     }
-  };
+  }
 }
 
 export default inject(store => ({

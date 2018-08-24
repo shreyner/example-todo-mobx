@@ -1,5 +1,5 @@
-import { types, cast } from "mobx-state-tree";
-import TodoModel from "./TodoModel";
+import { types, cast } from 'mobx-state-tree';
+import TodoModel from './TodoModel';
 
 export enum TodoFilters {
   ALL,
@@ -15,7 +15,7 @@ let lastIdTodo: number = 0;
 // }
 
 export const TodoStore = types
-  .model("TodoStore", {
+  .model('TodoStore', {
     todos: types.optional(types.array(TodoModel), []),
     filter: types.optional(types.number, TodoFilters.ALL)
   })
@@ -36,13 +36,13 @@ export const TodoStore = types
   }))
   .actions(self => ({
     addTodo(text: string, completed?: boolean) {
-      self.todos.push(cast({ id: lastIdTodo++, text, completed}))
+      self.todos.push(cast({ id: lastIdTodo++, text, completed}));
     },
     setFilter(filter: TodoFilters) {
-      self.filter = filter
+      self.filter = filter;
     },
     clearCompletedTodo() {
-      self.todos = cast(self.todos.filter(({ completed }) => !completed))
+      self.todos = cast(self.todos.filter(({ completed }) => !completed));
     }
   }));
 

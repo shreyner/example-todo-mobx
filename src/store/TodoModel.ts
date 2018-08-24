@@ -1,7 +1,7 @@
-import { types } from "mobx-state-tree";
+import { types } from 'mobx-state-tree';
 
 export default types
-  .model("TodoModel", {
+  .model('TodoModel', {
     id: types.number,
     text: types.string,
     completed: types.optional(types.boolean, false)

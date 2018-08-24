@@ -1,7 +1,7 @@
-import * as React from "react";
-import { inject, observer } from "mobx-react";
-import TodoCount from "../TodoCounter/TodoCounter";
-import Filters from "../Filters/Filters";
+import * as React from 'react';
+import { inject, observer } from 'mobx-react';
+import TodoCount from '../TodoCounter/TodoCounter';
+import Filters from '../Filters/Filters';
 
 export interface FooterProps {
   clearCompleted: () => void;
