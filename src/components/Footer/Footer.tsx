@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { inject, observer } from 'mobx-react';
-import TodoCount from '../TodoCounter/TodoCounter';
+import TodoCount from '../TodoCounter';
 import Filters from '../Filters/Filters';
 
 export interface FooterProps {

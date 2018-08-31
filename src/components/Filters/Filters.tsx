@@ -20,7 +20,7 @@ export function Filters({ setFilter }: FiltersProps) {
       <ul>
         {[TodoFilters.ALL, TodoFilters.ACTIVE, TodoFilters.COMPLETED].map(
           filter => (
-            <FilterLink filter={filter}>{FilterTitles[filter]}</FilterLink>
+            <FilterLink key={filter} filter={filter}>{FilterTitles[filter]}</FilterLink>
           )
         )}
       </ul>

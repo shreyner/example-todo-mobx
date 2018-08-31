@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render TodoCounter 1`] = `
+<div>
+  Count: 
+  10
+</div>
+`;

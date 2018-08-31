@@ -19,5 +19,5 @@ export function TodoItem({ todo, onCompleted }: TodoItemProps) {
 }
 
 export default inject((store, ownProps: TodoItemProps) => ({
-  onCompleted: () => store.todoStore.changeComplete(ownProps.todo.id)
+  onCompleted: () => store.todoStore.findById(ownProps.todo.id)!.changeCompleted()
 }))(observer(TodoItem));

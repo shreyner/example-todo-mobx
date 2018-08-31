@@ -1,5 +1,6 @@
 import { types, cast } from 'mobx-state-tree';
 import TodoModel from './TodoModel';
+import { Todo } from '../interfaces';
 
 export enum TodoFilters {
   ALL,
@@ -26,9 +27,9 @@ export const TodoStore = types
     get filtratedTodo() {
       switch (self.filter) {
         case TodoFilters.ACTIVE:
-          return self.todos.filter(({ completed }) => !completed);
+          return self.todos.filter(({completed}) => !completed);
         case TodoFilters.COMPLETED:
-          return self.todos.filter(({ completed }) => completed);
+          return self.todos.filter(({completed}) => completed);
         default:
           return self.todos;
       }
@@ -36,13 +37,16 @@ export const TodoStore = types
   }))
   .actions(self => ({
     addTodo(text: string, completed?: boolean) {
-      self.todos.push(cast({ id: lastIdTodo++, text, completed}));
+      self.todos.push(cast({id: lastIdTodo++, text, completed}));
     },
     setFilter(filter: TodoFilters) {
       self.filter = filter;
     },
     clearCompletedTodo() {
-      self.todos = cast(self.todos.filter(({ completed }) => !completed));
+      self.todos = cast(self.todos.filter(({completed}) => !completed));
+    },
+    findById(todoId: number): Todo | undefined {
+      return self.todos.find(({id}) => id === todoId);
     }
   }));
 
